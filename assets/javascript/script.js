@@ -67,8 +67,13 @@ $(document).ready(function() {
       text: text,
       completed: false
     };
-
-    todos.push(newTodo);
+    if (text == []) {
+      alert("you must enter text");
+    }
+    else {
+      todos.push(newTodo);
+    }
+    
 
     renderTodos();
   });
