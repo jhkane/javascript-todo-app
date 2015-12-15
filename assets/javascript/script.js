@@ -51,7 +51,11 @@ $(document).ready(function() {
     var id = $(event.target).parent().parent().data('id');
     var todo = findById(id);
 
-    todo.complete = event.target.checked;
+    todo.complete = event.target.checked; 
+
+    $('.todo').css("text-decoration", "line-through");
+
+   
 
     renderTodos();
   });
@@ -68,10 +72,11 @@ $(document).ready(function() {
       completed: false
     };
     if (text == []) {
-      alert("you must enter text");
+      alert("Todo cannot be empty!");
     }
     else {
       todos.push(newTodo);
+      $('.todo-text').val('');
     }
     
 
